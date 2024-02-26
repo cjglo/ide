@@ -1,6 +1,7 @@
 #pragma once
 #include <raylib.h>
 #include <sstream>
+#include "RuleOfFive.hpp"
 
 namespace parser {
 
@@ -11,7 +12,7 @@ namespace parser {
     /*
      * Specific instance to handle the text input from stdin
      */
-    class TextHandler {
+class TextHandler : public virtual ruleOfFive::RuleOfFive {
         public:
         explicit TextHandler(TextHandlerFlags flags);
 
@@ -19,6 +20,7 @@ namespace parser {
 
 
         private:
+        std::string current_text;
         TextHandlerFlags flags;
     };
 

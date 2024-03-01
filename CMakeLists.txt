@@ -13,7 +13,11 @@ add_executable(ide
         src/WindowConstants.hpp
         src/parser/TextHandler.cpp
         src/parser/TextHandler.hpp
-        src/RuleOfFive.hpp)
+        src/RuleOfFive.hpp
+        src/file_system/FileEditor.hpp
+        src/file_system/FileEditor.cpp
+        src/file_system/Logger.hpp
+        src/file_system/Logger.cpp)
 
 
 target_link_libraries(ide PUBLIC ${CMAKE_SOURCE_DIR}/raylib/src/libraylib.a)

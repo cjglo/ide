@@ -5,6 +5,8 @@
 #include "parser/TextHandler.hpp"
 #include "file_system/FileEditor.hpp"
 
+using namespace windowConstants;
+
 int main(int argc, char* argv[]) {
 
     auto fileName = std::string{"defaultFileName.txt"};
@@ -17,18 +19,20 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    InitWindow(windowConstants::WINDOW_LENGTH, windowConstants::WINDOW_HEIGHT, windowConstants::title);
+    InitWindow(WINDOW_LENGTH, WINDOW_HEIGHT, title);
     SetTargetFPS(100);
     auto textHandler = std::make_unique<parser::TextHandler>(parser::TextHandlerFlags{});
     auto text = fileEditor.readFile();
-    auto cursor = std::pair<int32_t , int32_t>{10,10};
+    auto cursor = std::pair<int32_t , int32_t>{CURSOR_START_X,CURSOR_START_Y};
 
 
     while(!WindowShouldClose()) {
         BeginDrawing();
-        ClearBackground(WHITE);
+        ClearBackground(BLACK);
         text = textHandler->readKeyboard();
-        DrawText(text.c_str(), cursor.first, cursor.second, 14, BLACK);
+        auto textConsoleStart = CURSOR_START_Y-DEFAULT_WNINDOW_SPACING;
+        DrawLine(0, textConsoleStart, WINDOW_LENGTH, textConsoleStart, WHITE);
+        DrawText(text.c_str(), cursor.first, cursor.second, 14, WHITE);
 
         EndDrawing();
     }

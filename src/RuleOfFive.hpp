@@ -14,7 +14,5 @@ namespace ruleOfFive {
         RuleOfFive& operator=(const RuleOfFive& f) = delete;
 
         RuleOfFive& operator=(const RuleOfFive&& f) = delete;
-
-        virtual ~RuleOfFive() = delete;
     };
 }

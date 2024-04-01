@@ -5,7 +5,7 @@ project(ide)
 add_compile_options(-Wall)
 add_link_options(-ldl -pthread)
 
-include_directories(raylib/src)
+include_directories(raylib/lib)
 include_directories(src)
 
 add_executable(ide
@@ -20,4 +20,4 @@ add_executable(ide
         src/file_system/Logger.cpp)
 
 
-target_link_libraries(ide PUBLIC ${CMAKE_SOURCE_DIR}/raylib/src/libraylib.a)
+target_link_libraries(ide PUBLIC ${CMAKE_SOURCE_DIR}/raylib/lib/libraylib.a)

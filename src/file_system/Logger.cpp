@@ -8,10 +8,12 @@ namespace file_system {
         }
     }
 
-    void Logger::logInfo();
+    void Logger::logInfo() {
+        // TODO: This work is left in todo state, as debating switching to a Physics engine instead of IDE
+    }
 
-    void Logger::logSevere();
-
-    Logger::~Logger();
+    void Logger::logSevere() {
+        // TODO: This work is left in todo state, as debating switching to a Physics engine instead of IDE
+    }
 
 }
